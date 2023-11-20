@@ -1,0 +1,88 @@
+@import '../styles/mixins.scss';
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+.landingSection,
+.postsSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.sectionContainer {
+  margin-left: 24px;
+  margin-right: 24px;
+  max-width: 855px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.landing {
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  @include md {
+    flex-direction: row-reverse;
+  }
+}
+.landingPhoto {
+  border-radius: 50%;
+  width: 243px;
+  margin-bottom: 34px;
+  @include md {
+    flex-direction: row;
+    margin-left: 115px;
+  }
+}
+.landingText {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  margin-bottom: 24px;
+  @include md {
+    font-size: 44px;
+    line-height: 50px;
+    margin-bottom: 36px;
+  }
+}
+.landingDesc {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.landingTextContainer {
+  display: flex;
+  flex-direction: column;
+}
+.postsSection {
+  background: #edf7fa;
+}
+
+.postsActions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.cardsWrapper {
+  display: flex;
+  flex-direction: column;
+  @include md {
+    flex-direction: row;
+  }
+}
+.recent {
+  font-size: 22px;
+  line-height: 60px;
+}
+.viewAll {
+  color: $secondary-color;
+  font-size: 16px;
+}
+
+.downloadBtnWrapper {
+}
+.downloadBtn {
+  margin-top: 38px;
+}
