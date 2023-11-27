@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import styles from './styles.module.scss';
-import { Button } from 'components/Button';
+import { Button } from '@components/Button';
 import classNames from 'classnames';
-import { SummaryCard } from 'components/SummaryCard';
+import { SummaryCard } from '@components/SummaryCard';
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -16,12 +16,14 @@ export default function Home() {
           />
           <div className={styles.landingTextContainer}>
             <h1 className={styles.landingText}>
-              Hi, I am Cole, Creative Frontend Developer
+              Hi, I am Cole, Frontend Developer
             </h1>
             <div className={styles.landingDesc}>
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Velit officia consequat duis enim velit mollit.
-              Exercitation veniam consequat sunt nostrud amet.
+              I'm a passionate frontend software engineer dedicated to crafting
+              seamless and engaging user experiences. With a keen eye for design
+              and a knack for turning ideas into interactive realities, I thrive
+              on the ever-evolving challenges of web development. Let's build
+              something extraordinary together.
             </div>
             <div className={styles.downloadBtnWrapper}>
               <Button

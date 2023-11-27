@@ -1,0 +1,24 @@
+@import '../../styles/mixins.scss';
+
+.blogSection {
+  margin-left: 18px;
+  margin-right: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.leadText {
+  // use clamp here
+  font-size: 26px;
+  font-style: medium;
+  font-weight: 500;
+  @include desktop {
+    font-size: 44px;
+  }
+}
+
+.postsContainer {
+  display: flex;
+  flex-direction: column;
+}

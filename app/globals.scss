@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  --size-leading-4xs: 1;
+  --size-leading-3xs: 1.2;
+  --size-leading-2xs: 1.3;
+  --size-leading-xs: 1.4;
+  --size-leading-sm: 1.5;
+  --size-leading-base: 1.6;
+  --size-leading-md: 1.7;
+  --size-leading-lg: 1.8;
+  --size-tracking-xs: -0.5px;
+  --size-tracking-sm: -0.25px;
+  --size-tracking-md: 0.25px;
+  --size-tracking-lg: 1px;
+  --size-spacing--4: 2px;
+  --size-spacing--3: 4px;
+  --size-spacing--2: 8px;
+  --size-spacing--1: 12px;
+  --size-spacing-0: 16px;
+  --size-spacing-1: 18px;
+  --size-spacing-2: 20px;
+  --size-spacing-3: 24px;
+  --size-spacing-4: 28px;
+  --size-spacing-5: 32px;
+  --size-spacing-6: 36px;
+  --size-spacing-7: 40px;
+  --size-spacing-8: 48px;
+  --size-spacing-9: 56px;
+  --size-spacing-10: 64px;
+  --size-spacing-11: 76px;
+  --size-spacing-12: 96px;
+  --size-relative--3: 0.25em;
+  --size-relative--2: 0.5em;
+  --size-relative--1: 0.75em;
+  --size-relative-0: 1em;
+  --size-relative-1: 1.25em;
+  --size-relative-2: 1.5em;
+  --size-font-xs: clamp(0.75rem, 0.67vw + 0.6rem, 1rem);
+  --size-font-sm: clamp(0.88rem, 0.67vw + 0.73rem, 1.13rem);
+  --size-font-base: clamp(1.13rem, 0.33vw + 1.05rem, 1.25rem);
+  --size-font-md: clamp(1.25rem, 0.33vw + 1.18rem, 1.38rem);
+  --size-font-lg: clamp(1.38rem, 0.67vw + 1.23rem, 1.63rem);
+  --size-font-xl: clamp(1.5rem, 1.33vw + 1.2rem, 2rem);
+  --size-font-2xl: clamp(1.63rem, 1.67vw + 1.25rem, 2.25rem);
+  --size-font-3xl: clamp(1.88rem, 2vw + 1.43rem, 2.63rem);
+  --size-font-4xl: clamp(2.25rem, 3.33vw + 1.5rem, 3.5rem);
+  --size-font-5xl: clamp(2.5rem, 5.33vw + 1.3rem, 4.5rem);
+}
+
+:root {
+}
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+:global(section) {
+  margin-left: 24px;
+  margin-right: 24px;
+  max-width: 855px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}

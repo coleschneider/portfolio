@@ -1,0 +1,73 @@
+.nav {
+  position: fixed;
+  top: 1.5rem;
+  z-index: 2;
+  right: 50%;
+  transform: translate(50%, -25%);
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  background: red;
+}
+
+.listContainer {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  width: fit-content;
+  border-radius: 10rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.listItem {
+  // list-style: none;
+  // display: flex;
+  // flex-direction: row;
+  // gap: 1rem;
+  // padding: 0.5rem 1rem 0.5rem 1rem;
+  // background: white;
+  // width: fit-content;
+  // border-radius: 10rem;
+}
+
+.btnToggle {
+  outline: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+}
+.shadow {
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  border-radius: 2rem;
+  z-index: -1;
+  color: white;
+}
+.item {
+  display: inline-block;
+  position: relative;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 2rem;
+  color: black;
+  z-index: 1;
+  cursor: pointer;
+}

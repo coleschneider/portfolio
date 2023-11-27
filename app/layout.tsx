@@ -1,4 +1,5 @@
-import './globals.css';
+import { Header } from '@components/Header';
+import './globals.scss';
 import { Heebo } from 'next/font/google';
 
 const heebo = Heebo({
@@ -17,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={heebo.className}>{children}</body>
+      <body className={heebo.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

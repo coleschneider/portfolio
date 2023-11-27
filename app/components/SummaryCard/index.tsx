@@ -3,13 +3,13 @@ import classNames from 'classnames';
 type Props = {
   title: string;
   date: string;
-  tags: string[];
+  tags?: string[];
   summary: string;
 };
 export const SummaryCard: React.FunctionComponent<Props> = ({
   title,
   date,
-  tags,
+  tags = [],
   summary,
 }) => {
   return (
