@@ -1,4 +1,4 @@
-import { getBlogPosts } from '../../db/blog';
+import { getBlogPosts } from '@db/utils/blog';
 
 export default function BlogPage() {
   const posts = getBlogPosts();
