@@ -1,0 +1,65 @@
+@import '@styles/mixins.scss';
+@import '@styles/functions.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid $primary-color;
+  padding: 24px 0px;
+  @include desktop {
+    flex-direction: row;
+    align-items: normal;
+  }
+}
+
+.workImage {
+  width: 100%;
+  border-radius: 4px;
+  @include desktop {
+    width: 246px;
+    flex: 1;
+  }
+}
+
+.workDescWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  padding-top: 16px;
+  @include desktop {
+    padding-top: 0px;
+    flex: 2;
+    margin-left: 24px;
+  }
+}
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  width: 100%;
+
+  @include desktop {
+    font-size: 30px;
+    margin-top: 0px;
+  }
+}
+.detailsWrapper {
+  display: flex;
+
+  align-items: center;
+}
+
+.date {
+  background-color: $grey-darker;
+  padding: 8px 12px;
+  border-radius: 25px;
+  color: white;
+  margin-right: 24px;
+}
+.category {
+  color: $grey-lighter;
+}
+.description {
+  margin-top: 16px;
+}

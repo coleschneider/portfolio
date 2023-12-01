@@ -2,6 +2,7 @@ import { Column, Entity, JoinTable, ManyToMany, OneToMany } from 'typeorm';
 import { BaseEntity } from './BaseEntity';
 import { View } from './View';
 import { Tag } from './Tag';
+import { getConnection } from '@db/client';
 
 @Entity()
 export class Post extends BaseEntity {
@@ -18,4 +19,20 @@ export class Post extends BaseEntity {
   })
   @JoinTable()
   tags: Tag[];
+
+  async getViewCount() {
+    const datasource = await getConnection();
+    const viewRepo = datasource.getRepository(View);
+    return viewRepo
+      .createQueryBuilder('view')
+      .where('view.postId = :postId', { postId: this.id })
+      .getCount();
+  }
+  async viewPost() {
+    const datasource = await getConnection();
+    const viewRepo = datasource.getRepository(View);
+    const view = await viewRepo.create().save();
+    this.views = [...this.views, view];
+    await this.save();
+  }
 }

@@ -136,13 +136,16 @@ import styles from './styles.module.scss';
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import * as nav from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 const links = [
   { label: 'Home', url: '/' },
   { label: 'About', url: '/about' },
   { label: 'Blog', url: '/blog' },
-  { label: 'Contact', url: 'contact' },
+  { label: 'Resume', url: '/resume' },
+  { label: 'Contact', url: '/contact' },
 ];
 
 const active = {
@@ -153,29 +156,28 @@ const inactive = {
   color: 'black',
 };
 
-export const Header = () => {
+const getIsActivePath = (currentPath: string, path: string) => {
+  if (currentPath !== path && currentPath.includes(path)) {
+    return /^\/blog\/\d$/.test(currentPath);
+  }
+  return currentPath === path;
+};
+export const Header = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+
+  const currentPath = usePathname();
+
   return (
     <>
       <nav className={styles.nav}>
         <motion.ul className={styles.listContainer}>
           {links.map(({ label, url }, index) => {
-            const isActive = index === activeIndex;
+            const isActive = getIsActivePath(currentPath, url);
 
+            const isResume = label === 'Resume';
             return (
-              <motion.li
-                key={index}
-                onClick={() => setActiveIndex(index)}
-                className={styles.listItem}
-              >
-                <div
-                  onClick={() => setActiveIndex(index)}
-                  className={styles.item}
-                >
+              <motion.li key={index} className={styles.listItem}>
+                <div className={styles.item}>
                   {isActive ? (
                     <motion.span layoutId="shadow" className={styles.shadow} />
                   ) : null}

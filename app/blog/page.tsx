@@ -3,21 +3,24 @@ import { getBlogPosts, getAllBlogPosts } from '@db/utils/blog';
 
 import styles from './styles.module.scss';
 export default async function BlogPage() {
-  const posts = getBlogPosts();
-  const p = await getAllBlogPosts();
+  const posts = await getAllBlogPosts();
+  console.log(posts);
   return (
-    <section className={styles.blogSection}>
-      <h1 className={styles.leadText}>Blog</h1>
-      <div className={styles.postsContainer}>
-        {posts.map((post) => (
-          <SummaryCard
-            key={post.slug}
-            title={post.title}
-            summary={post.summary}
-            date={post.publishedAt}
-            // tags={post.metadata}
-          />
-        ))}
+    <section>
+      <div className="container">
+        <h1 className={styles.leadText}>Blog</h1>
+        <div className={styles.postsContainer}>
+          {posts.map((post) => (
+            <SummaryCard
+              key={post.id}
+              id={post.id}
+              title={post.title}
+              summary={post.summary}
+              date={post.createdAt.toString()}
+              // tags={post.metadata}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

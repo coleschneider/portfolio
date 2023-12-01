@@ -1,3 +1,4 @@
+@import './variables.scss';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -52,14 +53,16 @@ html {
 :root {
 }
 
-body {
-  margin-left: auto;
-  margin-right: auto;
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-
-:global(section) {
-  margin-left: 24px;
-  margin-right: 24px;
+.section-description {
+  font-size: 22px;
+}
+.container {
+  margin: 32px 24px;
   max-width: 855px;
   display: flex;
   width: 100%;

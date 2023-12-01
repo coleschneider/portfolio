@@ -60,11 +60,40 @@ export function getBlogPosts() {
   return getMDXData(path.join(process.cwd(), 'content'));
 }
 
+function getBlogPostsByTitle(): Record<string, BlogPost> {
+  return getBlogPosts().reduce((postsByTitle, post) => {
+    postsByTitle[post.title] = post;
+    return postsByTitle;
+  }, {});
+}
 export const getAllBlogPosts = async () => {
   const datasource = await getConnection();
+  const byTitle = getBlogPostsByTitle();
+
   const posts = await datasource
     .getRepository(Post)
     .find({ loadEagerRelations: true });
-  console.log(posts[0].tags);
-  return posts;
+
+  const resultPromise = posts.map(async (post) => {
+    const postWithContent = byTitle[post.title];
+
+    const viewCount = await post.getViewCount();
+    return {
+      ...post,
+      content: postWithContent.content,
+      viewCount,
+    };
+  });
+  const allPosts = await Promise.all(resultPromise);
+
+  return allPosts;
+};
+
+export const viewBlogPost = async (id: number) => {
+  const datasource = await getConnection();
+  const post = await datasource
+    .getRepository(Post)
+    .findOneOrFail({ where: { id } });
+  await post.viewPost();
+  return post;
 };

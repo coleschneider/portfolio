@@ -1,5 +1,5 @@
+import '@styles/global.scss';
 import { Header } from '@components/Header';
-import './globals.scss';
 import { Heebo } from 'next/font/google';
 
 const heebo = Heebo({

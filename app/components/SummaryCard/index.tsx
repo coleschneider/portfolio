@@ -1,19 +1,23 @@
 import styles from './styles.module.scss';
 import classNames from 'classnames';
+import Link from 'next/link';
+
 type Props = {
+  id: string;
   title: string;
   date: string;
   tags?: string[];
   summary: string;
 };
-export const SummaryCard: React.FunctionComponent<Props> = ({
+export const SummaryCard: React.FunctionComponent<Props> = async ({
+  id,
   title,
   date,
   tags = [],
   summary,
 }) => {
   return (
-    <div className={styles.cardWrapper}>
+    <Link className={styles.cardWrapper} href={`/blog/${id}`}>
       <div className={styles.goCorner}>
         <div className={styles.goArrow}>→</div>
       </div>
@@ -24,6 +28,6 @@ export const SummaryCard: React.FunctionComponent<Props> = ({
         <div className={styles.tags}>{tags.join(', ')}</div>
       </div>
       <div className={styles.cardSummary}>{summary}</div>
-    </div>
+    </Link>
   );
 };
