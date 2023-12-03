@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import fs from 'fs';
 import path from 'path';
 import { getConnection } from '../client';

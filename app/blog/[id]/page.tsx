@@ -2,11 +2,9 @@ import { GetStaticPropsContext } from 'next';
 import { viewBlogPost } from '@db/utils/blog';
 
 const BlogPage = async ({ params }: GetStaticPropsContext<{ id: string }>) => {
-  const post = await viewBlogPost(params.id);
-  console.log(post);
-  // const post = await viewBlogPost(id);
-  // console.log(post);
-  // return <h1 className={styles}></h1>;
+  const postId = Number(params.id);
+  const post = await viewBlogPost(postId);
+
   return (
     <div>
       Hello there, The following post title is: \<h1>{post.title}</h1>

@@ -4,7 +4,7 @@ import { getBlogPosts, getAllBlogPosts } from '@db/utils/blog';
 import styles from './styles.module.scss';
 export default async function BlogPage() {
   const posts = await getAllBlogPosts();
-  console.log(posts);
+
   return (
     <section>
       <div className="container">

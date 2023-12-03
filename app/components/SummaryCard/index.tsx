@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Link from 'next/link';
 
 type Props = {
-  id: string;
+  id: number;
   title: string;
   date: string;
   tags?: string[];

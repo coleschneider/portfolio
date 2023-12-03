@@ -14,26 +14,19 @@ export const getConnection = async () => {
   if (db) {
     return db;
   }
-  console.log({
-    host: process.env.DB_HOST,
-    database: process.env.DB_NAME,
-    username: process.env.DB_USER,
-    password: process.env.DB_PASS,
-  });
+
   const datasource = new DataSource({
     type: 'postgres',
     host: process.env.DB_HOST,
     database: process.env.DB_NAME,
     username: process.env.DB_USER,
     password: process.env.DB_PASS,
-    // ssl: isProd,
+    ssl: isProd,
     entities: [...Object.values(entities)],
     synchronize: false,
     logging: false,
-    extra: {
-      max: 10,
-    },
   });
   db = await datasource.initialize();
+
   return datasource;
 };
