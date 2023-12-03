@@ -142,10 +142,10 @@ import React, { useEffect, useState } from 'react';
 
 const links = [
   { label: 'Home', url: '/' },
-  { label: 'About', url: '/about' },
+  // { label: 'About', url: '/about' },
   { label: 'Blog', url: '/blog' },
-  { label: 'Resume', url: '/resume' },
-  { label: 'Contact', url: '/contact' },
+  // { label: 'Resume', url: '/resume' },
+  // { label: 'Contact', url: '/contact' },
 ];
 
 const active = {
