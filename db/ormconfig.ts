@@ -9,10 +9,11 @@ if (!isProd) {
 
 const source = new DataSource({
   type: 'postgres',
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  username: process.env.DB_USER,
-  password: process.env.DB_PASS,
+  host: process.env.RDS_HOSTNAME,
+  port: process.env.RDS_PORT,
+  database: process.env.RDS_DB_NAME,
+  username: process.env.RDS_USERNAME,
+  password: process.env.RDS_PASSWORD,
   ssl: isProd,
   entities: ['dist/entities/**/*.js'],
   migrations: ['dist/migrations/**/*.js'],
